@@ -3,16 +3,19 @@ const decreaseButtonElement = document.querySelector('.counter__button--decrease
 const counterValueElement = document.querySelector('.counter__value');
 const counterResetElement = document.querySelector('.counter__reset')
 
-increaseButtonElement.addEventListener('click', function() {
-    // Get current value of counter
-    const currentValue = counterValueElement.textContent;
-    // convert value to number type
-    const currentValueAsNumber = +currentValue;
-    // Increment by 1
-    const newValue = currentValueAsNumber + 1; 
-    // Set counter element with new value
-    counterValueElement.textContent = newValue;
-})
+function incrementCounter() {
+     // Get current value of counter
+     const currentValue = counterValueElement.textContent;
+     // convert value to number type
+     const currentValueAsNumber = +currentValue;
+     // Increment by 1
+     const newValue = currentValueAsNumber + 1; 
+     // Set counter element with new value
+     counterValueElement.textContent = newValue;
+}
+
+increaseButtonElement.addEventListener('click', incrementCounter)
+document.addEventListener("keydown", incrementCounter)
 
 decreaseButtonElement.addEventListener('click', function () {
     const currentValue = counterValueElement.textContent;
