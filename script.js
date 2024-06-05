@@ -17,8 +17,10 @@ increaseButtonElement.addEventListener('click', function() {
 decreaseButtonElement.addEventListener('click', function () {
     const currentValue = counterValueElement.textContent;
     const currentValueAsNumber = +currentValue;
-    const decreasedValue = currentValueAsNumber - 1;
-    counterValueElement.textContent = decreasedValue;
+    if (currentValueAsNumber > 0) {
+        const decreasedValue = currentValueAsNumber - 1;
+        counterValueElement.textContent = decreasedValue;
+    }
 })
 
 counterResetElement.addEventListener('click', function(){
